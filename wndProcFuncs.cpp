@@ -1,5 +1,6 @@
 #include "wndProcFuncs.h"
 #include "resource.h"
+#include "SP_PR6_indviudal_task.h"
 
 
 void wndProc_OnCreate(HWND hwnd, LPCREATESTRUCT lpCreateStruct)
@@ -16,6 +17,7 @@ void wndProc_OnPaint(HWND hwnd)
 {
     PAINTSTRUCT ps;
     HDC hdc = BeginPaint(hwnd, &ps);
+    Rectangle(hdc, frameRect.left, frameRect.top, frameRect.right, frameRect.bottom);
 
     EndPaint(hwnd, &ps);
 }

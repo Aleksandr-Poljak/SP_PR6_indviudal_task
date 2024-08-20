@@ -1,6 +1,6 @@
 #include "resource.h"
 
-
+extern RECT frameRect; // Рамка
 
 //Виртуальные клавиши и их числовые значениями в системе:
 #define VK_H		0x48 // H (Влево)

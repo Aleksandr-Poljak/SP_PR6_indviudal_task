@@ -9,6 +9,7 @@
 HINSTANCE hInst;                                // текущий экземпляр
 WCHAR szTitle[MAX_LOADSTRING];                  // Текст строки заголовка
 WCHAR szWindowClass[MAX_LOADSTRING];            // имя класса главного окна
+RECT frameRect {120, 20, 200, 300};             // Рамка
 
 
 // Отправить объявления функций, включенных в этот модуль кода:
