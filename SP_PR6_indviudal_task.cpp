@@ -9,10 +9,7 @@
 HINSTANCE hInst;                                // текущий экземпляр
 WCHAR szTitle[MAX_LOADSTRING];                  // Текст строки заголовка
 WCHAR szWindowClass[MAX_LOADSTRING];            // имя класса главного окна
-int hWndWidth = 200;                            // Ширина окна
-int hWndHeight = 300;                           // Длина окна
-int hWndXstart = 120;                           // X верхнего левого угла
-int hWndYstart = 20;                           // Y верхнего левого угла
+
 
 // Отправить объявления функций, включенных в этот модуль кода:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
@@ -85,7 +82,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    hInst = hInstance; // Сохранить маркер экземпляра в глобальной переменной
 
    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-       hWndXstart, hWndYstart, hWndWidth, hWndHeight, nullptr, nullptr, hInstance, nullptr);
+       CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
 
    if (!hWnd)
    {

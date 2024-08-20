@@ -1,6 +1,9 @@
 #include "resource.h"
 
-extern int hWndWidth;
-extern int hWndHeight;
-extern int hWndXstart;
-extern int hWndYstart;
+
+
+//Виртуальные клавиши и их числовые значениями в системе:
+#define VK_H		0x48 // H (Влево)
+#define VK_J		0x4A // J (Вправо)
+#define VK_K		0x4B // K (Вверх)
+#define VK_L		0x4C // L (Вниз)
