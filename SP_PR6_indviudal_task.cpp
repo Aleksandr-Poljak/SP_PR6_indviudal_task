@@ -103,6 +103,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         HANDLE_MSG(hWnd, WM_COMMAND, wndProc_OnCommand);
         HANDLE_MSG(hWnd, WM_PAINT, wndProc_OnPaint);
         HANDLE_MSG(hWnd, WM_DESTROY, wndProc_OnDestroy);
+        HANDLE_MSG(hWnd, WM_KEYDOWN, wndProc_OnKeyDown);
     default:
         return DefWindowProc(hWnd, message, wParam, lParam);
     }

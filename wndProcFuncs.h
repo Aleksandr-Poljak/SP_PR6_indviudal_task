@@ -30,3 +30,8 @@ void wndProc_OnCommand(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify);
 /// </summary>
 /// <param name="hwnd">Дескриптор окна</param>
 void wndProc_OnDestroy(HWND hwnd);
+
+/// <summary>
+/// Обработчик сообщений клавиатуры
+/// </summary>
+void wndProc_OnKeyDown(HWND hwnd, UINT vk, BOOL fDown, int cRepeat, UINT flags);
