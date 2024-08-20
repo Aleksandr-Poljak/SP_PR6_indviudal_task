@@ -64,9 +64,41 @@ void wndProc_OnKeyDown(HWND hwnd, UINT vk, BOOL fDown, int cRepeat, UINT flags)
         frameRect.top += 7;
         frameRect.bottom += 7;
         break;
+    case VK_F2:
+        drawMouseMode = TRUE;
+        break;
+    case VK_F3:
+        drawMouseMode = FALSE;
+        break;
     default:
-        MessageBox(hwnd, TEXT("Неизвестная клавиша"), TEXT("Ошибка"), MB_OK);
         break;
     }
     InvalidateRect(hwnd, NULL, TRUE);
+}
+
+void wndProc_OnMouseMove(HWND hwnd, int x, int y, UINT keyFlags)
+{
+    static int moveCount = 0;
+    if (drawMouseMode && LBMouseDown && x >= frameRect.left && x <= frameRect.right && y >= frameRect.top && y <= frameRect.bottom)
+    {
+        moveCount++;
+        if (moveCount % 4 == 0)
+        {
+            HDC hdc = GetDC(hwnd);
+            DrawTriangle(hdc, x, y, 10, RGB(0, 128, 128));
+            ReleaseDC(hwnd, hdc);
+        }
+    }
+   
+}
+
+
+void wndProc_OnLButtonDown(HWND hwnd, BOOL fDoubleClick, int x, int y, UINT keyFlags)
+{
+    LBMouseDown = TRUE;
+}
+
+void wndProc_OnLButtonUp(HWND hwnd, int x, int y, UINT keyFlags)
+{
+    LBMouseDown = FALSE;
 }

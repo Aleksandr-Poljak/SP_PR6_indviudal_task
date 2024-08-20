@@ -10,7 +10,8 @@ HINSTANCE hInst;                                // текущий экземпл
 WCHAR szTitle[MAX_LOADSTRING];                  // Текст строки заголовка
 WCHAR szWindowClass[MAX_LOADSTRING];            // имя класса главного окна
 RECT frameRect {120, 20, 200, 300};             // Рамка
-
+bool drawMouseMode = false;                     // Режим рисования мышью
+bool LBMouseDown = false;
 
 // Отправить объявления функций, включенных в этот модуль кода:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
@@ -104,6 +105,10 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
         HANDLE_MSG(hWnd, WM_PAINT, wndProc_OnPaint);
         HANDLE_MSG(hWnd, WM_DESTROY, wndProc_OnDestroy);
         HANDLE_MSG(hWnd, WM_KEYDOWN, wndProc_OnKeyDown);
+        HANDLE_MSG(hWnd, WM_MOUSEMOVE, wndProc_OnMouseMove);     
+        HANDLE_MSG(hWnd, WM_LBUTTONDOWN, wndProc_OnLButtonDown);
+        HANDLE_MSG(hWnd, WM_LBUTTONUP, wndProc_OnLButtonUp);
+
     default:
         return DefWindowProc(hWnd, message, wParam, lParam);
     }

@@ -35,3 +35,18 @@ void wndProc_OnDestroy(HWND hwnd);
 /// Обработчик сообщений клавиатуры
 /// </summary>
 void wndProc_OnKeyDown(HWND hwnd, UINT vk, BOOL fDown, int cRepeat, UINT flags);
+
+/// <summary>
+/// Обработчик сообщений перемещения мыши
+/// </summary>
+void wndProc_OnMouseMove(HWND hwnd, int x, int y, UINT keyFlags);
+
+/// <summary>
+/// Обработчик сообщения нажатия левой кнопки мыши
+/// </summary>
+void wndProc_OnLButtonDown(HWND hwnd, BOOL fDoubleClick, int x, int y, UINT keyFlags);
+
+/// <summary>
+/// Обработчик сообщения отпускания левой кнопки мыши
+/// </summary>
+void wndProc_OnLButtonUp(HWND hwnd, int x, int y, UINT keyFlags);

@@ -135,6 +135,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="SP_PR6_indviudal_task.cpp" />
+    <ClCompile Include="utils.cpp" />
     <ClCompile Include="wndProcFuncs.cpp" />
   </ItemGroup>
   <ItemGroup>
